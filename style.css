@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  .header__left img {
+    height: 40px;
+  }
+  
+  .user__avatar {
+    border-radius: 50%;
+    width: 45px;
+  }
+  
+  .header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    background-color: white;
+    z-index: 100;
+    top: 0;
+    box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
+  }
+  
+  .header__left {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .header__input {
+    display: flex;
+    align-items: center;
+    background-color: #eff2f5;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 999px;
+  }
+  
+  .header__input input {
+    border: none;
+    background-color: transparent;
+    outline-width: 0;
+  }
+  
+  .header__middle {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .header__option .material-icons {
+    font-size: xx-large;
+    color: gray;
+  }
+  
+  .header__option:hover .material-icons {
+    color: #2e81f4;
+  }
+  
+  .header__option {
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    cursor: pointer;
+  }
+  
+  .header__option.active .material-icons {
+    color: #2e81f4;
+  }
+  
+  .header__option.active {
+    border-bottom: 4px solid #2e81f4;
+  }
+  
+  .header__option:hover {
+    background-color: #eff2f5;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 30px;
+    border-bottom: none;
+  }
+  
+  .header__info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__info h4 {
+    margin-left: 10px;
+  }
+  
+  .header__right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__right .material-icons {
+    color: gray;
+    margin: 0 10px;
+  }
+  
+  .header__right .material-icons:hover {
+    cursor: pointer;
+  }
+  
+  /* sidebar  */
+  
+  .sidebarRow {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebarRow:hover {
+    background-color: lightgray;
+    border-radius: 10px;
+  }
+  
+  .sidebarRow h4 {
+    margin-left: 20px;
+    font-weight: 600;
+  }
+  
+  .sidebarRow .material-icons {
+    font-size: xx-large;
+    color: #2e81f4;
+  }
+  
+  /* story */
+/*verhaal maken */
+
+
+
+.image-container {
+    position: relative;
+    width: 120px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #ddd; /* Optioneel: voeg een rand toe */
+    border-radius: 15px; /* Afgeronde hoeken voor het containerdiv-element */
+}
+
+.custom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Behoudt de aspectverhouding en vult het volledige containergebied */
+}
+
+.white-overlay {
+    position: absolute;
+    bottom: -20%; /* Hier wordt de onderkant van het witte vlak uitgebreid buiten de container */
+    left: 0;
+    width: 100%;
+    height: 42%; /* Aangepast naar 25% om het witte maantje kleiner te maken */
+    background-color: white;
+    border-radius: 0 0 15px 15px; /* Afgeronde hoeken voor het witte vlak onderaan */
+}
+
+.half-circle {
+    position: absolute;
+    bottom: 15px; /* Verlaag de onderkant een beetje om de halve cirkel volledig te maken */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px; /* Aangepast naar 75px breedte */
+    height: 60px; /* Aangepast naar 75px hoogte */
+    background-color: white;
+    border-radius: 100px 100px 0 0; /* Maak een halve cirkel met border-radius */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Zorg ervoor dat de halve cirkel boven de witte overlay en tekst ligt */
+}
+
+
+.blue-circle {
+    background-color: #1877f2;
+    width: 40px; /* Aangepast naar 40px breedte */
+    height: 40px; /* Aangepast naar 40px hoogte */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+}
+
+/* Aangepaste CSS voor het SVG-plusje */
+.plus-icon {
+    fill: white; /* Kleur voor het plusje */
+    width: 20px; /* Breedte van de SVG */
+    height: 20px; /* Hoogte van de SVG */
+	z-index: 4;
+}
+
+.centered-text {
+    position: absolute;
+    bottom: 50%;
+    Left: 50%;
+    transform: translate(-50%, -50%);
+    color: black; /* Kleur van de tekst */
+    font-size: 12px; /* Grootte van de tekst */
+    white-space: nowrap; /* Voorkom dat de tekst naar een nieuwe regel gaat */
+    z-index: 3;
+}
+
+.custom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pas object-fit aan om de afbeelding uit te zoomen en 
+	volledig zichtbaar te maken */
+	object-position: center;
+}
+
+  .story {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 120px;
+    height: 200px;
+    box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+  }
+  
+  .story:hover {
+    transform: scale(1.07);
+  }
+  
+  .story__avatar {
+    margin: 10px;
+    color: blue;
+  }
+  
+  .story h4 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+  }
+  
+  .storyReel {
+    padding: 10px 0;
+    display: flex;
+  }
+  
+  .main__body {
+    display: flex;
+  }
+  
+  body {
+    background-color: #f1f2f5;
+  }
+  
+  .feed {
+    flex: 1;
+    padding: 30px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sidebar {
+    padding: 25px 10px;
+    flex: 0.33;
+  }
+  
+/* message sender */
+.messageSender {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+  width: 100%;
+  max-width: 1040px; /* Hier heb ik een maximale breedte van 500px toegevoegd */
+  margin: 10px auto; /* Gecentreerd op de pagina met een marge van 10px boven en onder */
+}
+
+.messageSender__top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eff2f5;
+  padding: 15px;
+}
+
+.messageSender__top form {
+  flex: 1;
+  display: flex;
+}
+
+.messageSender__top form input {
+  flex: 1;
+  outline-width: 0;
+  border: none;
+  padding: 15px 20px;
+  margin: 0 10px;
+  border-radius: 999px;
+  background-color: #eff2f5;
+}
+
+.messageSender__bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.messageSender__option {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  color: gray;
+  margin: 5px;
+}
+
+.messageSender__option h3 {
+  font-size: medium;
+  margin-left: 10px;
+}
+
+.messageSender__option:hover {
+  cursor: pointer;
+  background-color: #eff2f5;
+  border-radius: 20px;
+}
+
+  
+  /* post */
+  .post__option:hover .material-icons {
+    color: #2e81f4;
+  }  
+
+  .post {
+  background-color: #ffffff; /* Achtergrondkleur */
+  border: 1px solid #e0e0e0; /* Randstijl en kleur */
+  border-radius: 8px; /* Randradius */
+  padding: 16px; /* Binnenruimte */
+  margin-bottom: 16px; /* Afstand tussen posts */
+  width: 100%;
+  max-width: 1040px;
+  }
+
+.post__topInfo h3,
+.post__topInfo p {
+  margin: 0;
+  padding: 0;
+}
+
+  .post__image img {
+    width: 100%;
+  }
+  
+  .post__top {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .post__avatar {
+    margin-right: 10px;
+  }
+  
+  .post__topInfo h3 {
+    font-size: medium;
+  }
+  
+  .post__topInfo p {
+    font-size: small;
+    color: gray;
+  }
+  
+  .post__bottom {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px 25px;
+  }
+  
+  .post__options {
+    padding-top: 10px;
+    border-top: 1px solid lightgray;
+    display: flex;
+	align-items: center;
+    justify-content: space-between;
+    font-size: medium;
+    color: gray;
+    cursor: pointer;
+    padding: 15px;
+  }
+  
+  .post__option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    flex: 1;
+  }
+  
+  .post__option p {
+    margin-left: 10px;
+  }
+  
+  .post__option:hover {
+    background-color: #eff2f5;
+    border-radius: 10px;
+  }
+  
+
+
+/* Stijlen voor het invoervak voor opmerkingen */
+.comment__input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment__input img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment__input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid lightgray;
+    border-radius: 20px;
+}
+
+.comment__input button {
+    background-color: #1877F2;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.comment__input button:hover {
+    background-color: #0E63E9;
+}
+
+/* Stijlen voor reacties */
+.comment {
+    display: flex;
+    align-items: center; /* Plaats de tekst en de naam in het midden van de lijn met de foto */
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 15px;
+	width: 100%;
+ 	max-width: 1040px;
+}
+
+.comment img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment__content {
+    flex: 1;
+}
+
+.comment p {
+    font-size: Medium;
+    margin: 0; /* Verwijder de standaardmarges om de tekst in het midden uit te lijnen */
+}
+/* Stijlen voor de sectie met reacties */
+/* Stijlen voor reacties */
+.comment {
+    display: flex;
+    align-items: center; /* Plaats de tekst en de naam in het midden van de lijn met de foto */
+    margin-bottom: 10px;
+}
+
+.comment img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.comment__content {
+    flex: 1;
+}
+
+.comment__box {
+    background-color: #eff2f5; /* Achtergrondkleur voor het vakje van naam en commentaar */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+	display: inline-block; /* Laat het vakje de tekst volgen */
+}
+
+.comment p {
+    font-size: medium; /* Aangepaste grootte voor de tekst van de reactie */
+    margin: 0; /* Verwijder de standaardmarges om de tekst in het midden uit te lijnen */
+}
+
+.comment__actions {
+    display: flex;
+}
+
+/* Voeg een stijl toe aan de "Leuk" knop */
+.action {
+    font-size: small; /* Grootte van "Leuk" en "Beantwoorden" */
+    color: gray;
+    margin-right: 5px; /* Ruimte tussen "Leuk" en "Beantwoorden" */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Voeg een stijl toe aan de tussenruimte */
+.action-space {
+    margin: 0 5px;
+    color: #000; /* Zwarte kleur voor de scheider */
+}
+
+/* Voeg een stijl toe aan de "Leuk" knop wanneer deze is aangeklikt */
+.like-button__icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('/images/Thumbs up.png'); /* Het pad naar de afbeelding van het duimpje omhoog */
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 5px; /* Voeg wat ruimte toe tussen de tekst "Leuk" en het pictogram */
+    display: none; /* Verberg het pictogram standaard */
+}
+
+/* Toon het duimpje-omhoogpictogram wanneer de "Leuk" knop is aangeklikt */
+.like-button.clicked .like-button__icon {
+    display: inline-block; /* Toon het pictogram wanneer de "Leuk" knop is aangeklikt */
+}
+
+/* Optioneel: voeg een stijl toe aan de "Leuk" knop wanneer deze is aangeklikt */
+.like-button.clicked {
+    background-color: #eff2f5;
+    border-radius: 15px; /* Afgeronde hoeken voor de knop */
+}
+
+.action:hover {
+    text-decoration: underline; /* Onderstreep de tekst bij hover */
+}
+
+
+
+}
+  @media (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+  
+    .header__input input {
+      display: none;
+    }
+  
+    .header__middle {
+      display: none;
+    }
+  
+    .header__info {
+      display: none;
+    }
+  
+    .widgets {
+      display: none;
+    }
+  
+    .feed {
+      margin-top: 20px;
+      width: 100%;
+      padding: 0;
+    }
+  
+    .story h4 {
+      font-size: 10px;
+    }
+  
+    .story img {
+      width: 40px;
+    }
+  }
+  
+  @media (min-width: 320px) {
+    .storyReel {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1440px) {
+    /* CSS To Target 767 px width of screen */
+  
+    .feed {
+      width: 50%;
+      padding: 10px 50px;
+    }
+  }
